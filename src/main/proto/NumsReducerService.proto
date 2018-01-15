@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package org.egdev;
+
+option java_package = "org.egdev";
+option java_multiple_files = true;
+
+message NumbersReq {
+    repeated double numbers = 1;
+}
+
+message NumbersResp {
+    double result = 1;
+    string operation = 2;
+}
+
+service NumsReducerService {
+    rpc avg (NumbersReq) returns (NumbersResp);
+}
